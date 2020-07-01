@@ -1,0 +1,11 @@
+[Unit]
+Requires=ops-php-fpm@6002.service
+After=ops-php-fpm@6002.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/php -r 'echo "default service listener\n";'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
